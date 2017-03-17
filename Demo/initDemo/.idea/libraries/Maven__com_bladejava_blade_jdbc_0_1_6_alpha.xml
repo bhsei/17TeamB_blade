@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: com.bladejava:blade-jdbc:0.1.6-alpha">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/bladejava/blade-jdbc/0.1.6-alpha/blade-jdbc-0.1.6-alpha.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/com/bladejava/blade-jdbc/0.1.6-alpha/blade-jdbc-0.1.6-alpha-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/bladejava/blade-jdbc/0.1.6-alpha/blade-jdbc-0.1.6-alpha-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

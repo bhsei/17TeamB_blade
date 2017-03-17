@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: com.bladejava:blade-core:1.7.2-alpha">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/bladejava/blade-core/1.7.2-alpha/blade-core-1.7.2-alpha.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/com/bladejava/blade-core/1.7.2-alpha/blade-core-1.7.2-alpha-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/bladejava/blade-core/1.7.2-alpha/blade-core-1.7.2-alpha-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
