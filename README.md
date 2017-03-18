@@ -3,7 +3,7 @@
 
 ![](https://bladejava.com/static/img/banner.png)
 
-Blade是一个轻量级的JavaWeb模块，其官方主页可见[BladeJava](https://www.baldejava.com)。
+Blade是一个轻量级的JavaWeb模块，其官方主页可见[BladeJava](https://www.bladejava.com)。
 
 **轻量级**
 新一代JavaWeb框架，不依赖更多的库，摆脱SSH的臃肿，模块化设计，使用起来更轻便！
