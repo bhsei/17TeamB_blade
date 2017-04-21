@@ -30,19 +30,19 @@ public class loginController {
     }
 
 
-    @Route(value = "/working",method = HttpMethod.POST)
+    @Route(value = "/working")
     public String getWorking(Session session, Request request,Response response) throws Exception, IOException {
         //获取表单信息
         String username = request.query("username");
         String password = request.query("password");
         if (username == null || password == null) {
             response.go("/login");
-            return "/login";
+            return null;
         }
         user user = userService.getUser(username, password);
         if (user == null) {
             response.go("/login");
-            return "/login";
+            return null;
         }
         session.attribute("user", user);
         //获取未完成内容
