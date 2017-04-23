@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html class="stopwatch-mode">
+
+<head lang="en">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <title>working </title>
+    <link type="text/css" rel="stylesheet" href="static/jonthornton-jquery-timepicker/jquery.timepicker.css">
+    <link rel="stylesheet" type="text/css" href="static/css/normalize.css" />
+    <link rel="stylesheet" type="text/css" href="static/fonts/font-awesome-4.2.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" type="text/css" href="static/css/demo.css" />
+    <link rel="stylesheet" type="text/css" href="static/css/component.css" />
+
+
+
+</head>
+
+<body>
+
+<div class="wrapper">
+
+    <div class="app">
+        <form name="form" id="form">
+            <span class="input input--ichiro">
+					<input class="input__field input__field--ichiro" type="text" id="do" name="do"/>
+					<label class="input__label input__label--ichiro" for="do">
+						<span class="input__label-content input__label-content--ichiro">你做了什么呢</span>
+					</label>
+				</span>
+            <!--<br>-->
+            <span class="input input--ichiro">
+					<input class="input__field input__field--ichiro" type="text" id="wrong" name="wrong"/>
+					<label class="input__label input__label--ichiro" for="wrong">
+						<span class="input__label-content input__label-content--ichiro">遇到了什么问题呢</span>
+					</label>
+				</span>
+            <!--<br>-->
+            <span class="input input--ichiro">
+					<input class="input__field input__field--ichiro" type="text" id="plan" name="plan"/>
+					<label class="input__label input__label--ichiro" for="plan">
+						<span class="input__label-content input__label-content--ichiro">是否符合计划呢</span>
+					</label>
+				</span>
+            <br>
+            <input type="hidden" id="username" name="username">
+            <input type="hidden" id="password" name="password">
+            <input type="hidden" id="user_id" name="user_id">
+            <input type="button" id="start"  value="开始" name="submit" style="width: 90%; max-width:400px ;margin-left: 15px;margin-right:15px;margin-top: 30px">
+            <input type="button" id="submit"  value="提交" name="submit" style="width: 90%; max-width:400px; margin-left: 15px;margin-right:15px;margin-top: 30px">
+            <input type="button" id="cancel"  value="取消" name="submit" style="width: 90%; max-width:400px; margin-left: 15px;margin-right:15px;margin-top: 30px">
+        </form>
+    </div>
+
+</div>
+
+<script src="static/js/jquery-1.8.3.min.js"></script>
+<script src="static/materialize/js/materialize.min.js"></script>
+<script src="static/js/classie.js"></script>
+<script>
+    (function() {
+        // trim polyfill : https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/Trim
+        if (!String.prototype.trim) {
+            (function() {
+                // Make sure we trim BOM and NBSP
+                var rtrim = /^[\s\uFEFF\xA0]+|[\s\uFEFF\xA0]+$/g;
+                String.prototype.trim = function() {
+                    return this.replace(rtrim, '');
+                };
+            })();
+        }
+
+        [].slice.call( document.querySelectorAll( 'input.input__field' ) ).forEach( function( inputEl ) {
+            // in case the input is already filled..
+            if( inputEl.value.trim() !== '' ) {
+                classie.add( inputEl.parentNode, 'input--filled' );
+            }
+
+            // events:
+            inputEl.addEventListener( 'focus', onInputFocus );
+            inputEl.addEventListener( 'blur', onInputBlur );
+        } );
+
+        function onInputFocus( ev ) {
+            classie.add( ev.target.parentNode, 'input--filled' );
+        }
+
+        function onInputBlur( ev ) {
+            if( ev.target.value.trim() === '' ) {
+                classie.remove( ev.target.parentNode, 'input--filled' );
+            }
+        }
+    })();
+</script>
+
+<script>
+    var username = "${user.name}";
+    var password = "${user.password}";
+    alert("Hello! "+"${user.nickname}")
+    $("#start").click(function(){
+        $.ajax({
+            cache: true,
+            type: "GET",
+            url: "/count",
+            data: {'username':username,'password':password},
+            async: true,
+            error: function(data) {
+                alert("访问失败，请联系管理员："+data);
+            },
+            success: function(data) {
+                alert(data);
+            }
+        });
+    })
+
+    $("#submit").click(function(){
+        $.ajax({
+            cache: true,
+            type: "POST",
+            url: "/count",
+            data: {'username':username,'password':password,'wrong':$("#wrong").val(),"do":$("#do").val(),"plan":$("#plan").val()},
+            async: true,
+            error: function(data) {
+                alert("访问失败，请联系管理员："+data);
+            },
+            success: function(data) {
+                alert(data);
+                $("#wrong").val("");
+                $("#do").val("");
+                $("#plan").val("");
+            }
+        });
+
+    })
+
+    $("#cancel").click(function(){
+        $.ajax({
+            cache: true,
+            type: "GET",
+            url: "/cancel",
+            data: {'username':username,'password':password},
+            async: true,
+            error: function(data) {
+                alert("访问失败，请联系管理员："+data);
+            },
+            success: function(data) {
+                alert(data);
+                $("#wrong").val("");
+                $("#do").val("");
+                $("#plan").val("");
+            }
+        });
+
+    })
+</script>
+
+</body>
+
+</html>
