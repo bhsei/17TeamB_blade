@@ -7,7 +7,7 @@ import com.blade.jdbc.core.Take;
 import org.hmh.model.user;
 
 /**
- * Created by HMH on 2017/4/19.
+ * Created this one by HMH on 2017/4/19.
  */
 @Service
 public class userService {
@@ -16,8 +16,12 @@ public class userService {
 
     public user getUser(String username,String password) {
         Take take = new Take(user.class).eq("name",username).eq("password",password);
-        user user=activeRecord.one(take);
-        return user;
+        return activeRecord.one(take);
+    }
+
+    public user getUser(int userId) {
+        Take take = new Take(user.class).eq("id",userId);
+        return activeRecord.one(take);
     }
 
 

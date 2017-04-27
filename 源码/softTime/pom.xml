@@ -6,7 +6,7 @@
 
     <groupId>groupId</groupId>
     <artifactId>softTime</artifactId>
-    <version>1.1-release</version>
+    <version>1.2-release</version>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
