@@ -5,15 +5,15 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by HMH on 2017/4/18.
+ * Created this one by HMH on 2017/4/18.
  */
 public class user implements Serializable {
 
-    int id;
-    String name;
-    String password;
-    String nickname;
-    int repo_id;
+    private int id;
+    private String name;
+    private String password;
+    private String nickname;
+    private int repo_id;
 
     public String getNickname() {
         return nickname;

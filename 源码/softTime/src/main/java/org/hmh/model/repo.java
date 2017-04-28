@@ -8,7 +8,6 @@ import java.io.Serializable;
 public class repo implements Serializable{
     int id;
     String name;
-    user captain;
 
     public repo(String name) {
         this.name = name;
@@ -30,11 +29,4 @@ public class repo implements Serializable{
         this.name = name;
     }
 
-    public user getCaptain() {
-        return captain;
-    }
-
-    public void setCaptain(user captain) {
-        this.captain = captain;
-    }
 }
