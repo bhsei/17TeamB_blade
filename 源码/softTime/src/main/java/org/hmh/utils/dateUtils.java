@@ -20,9 +20,7 @@ public class dateUtils {
         cal.set(Calendar.HOUR_OF_DAY, 0);
         cal.set(Calendar.MINUTE, 0);
         cal.set(Calendar.SECOND, 0);
-        System.out.println(cal.toString());
-        Date date = cal.getTime();
-        return date;
+        return cal.getTime();
     }
     public static Date getWeekEndDate(){
         Calendar cal = Calendar.getInstance();
@@ -36,7 +34,6 @@ public class dateUtils {
         cal.set(Calendar.HOUR_OF_DAY, 0);
         cal.set(Calendar.MINUTE, 0);
         cal.set(Calendar.SECOND, 0);
-        Date date = cal.getTime();
-        return date;
+        return cal.getTime();
     }
 }

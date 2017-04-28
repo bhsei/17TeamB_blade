@@ -49,7 +49,7 @@ public class EventService {
                 "  FROM (softTime.event as e\n" +
                 "    JOIN `softTime`.`user` as u)\n" +
                 "  WHERE (e.`user_id` IN\n" +
-                "         (SELECT e.`user_id`\n" +
+                "         (SELECT `id`\n" +
                 "                                          FROM `softTime`.`user` as u2\n" +
                 "                                          WHERE (u2.`repo_id` = (SELECT `softTime`.`repo`.`id`\n" +
                 "                                                                                FROM `softTime`.`repo`\n" +
@@ -78,7 +78,7 @@ public class EventService {
                 "  FROM (softTime.event as e\n" +
                 "    JOIN `softTime`.`user` as u)\n" +
                 "  WHERE (e.`user_id` IN\n" +
-                "         (SELECT e.`user_id`\n" +
+                "         (SELECT `id`\n" +
                 "                                          FROM `softTime`.`user` as u2\n" +
                 "                                          WHERE (u2.`repo_id` = (SELECT `softTime`.`repo`.`id`\n" +
                 "                                                                                FROM `softTime`.`repo`\n" +
