@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.11.1/bootstrap-table.min.css">
+
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+
+</head>
+<body>
+<ul id="myTab" class="nav nav-pills" style="padding: 5px;">
+    <li role="presentation" class="active" data-toggle="tab"><a href="#thisweek" data-toggle="tab">本周情况</a></li>
+    <li role="presentation"><a href="#allactive" data-toggle="tab">总工作情况</a></li>
+    <li role="presentation"><a href="#all" data-toggle="tab">所有提交</a></li>
+</ul>
+
+<div class="tab-content">
+    <div  class="tab-pane active" id="thisweek" style="padding: 0px 5px">
+        <table class="table table-bordered table-condensed">
+            <tr>
+                <th>任务号</th>
+                <th>组员</th>
+                <th>工作内容</th>
+                <th>遇到的问题</th>
+                <th>百分比</th>
+                <th>任务时长</th>
+                <th>开始时间</th>
+                <th>结束时间</th>
+            </tr>
+            #for (event : workthisWeek)
+            <tr>
+                <td>#${event.event_id}</td>
+                <td>${event.nickname}</td>
+                <td>${event.message}</td>
+                <td>${event.some_thing_wrong}</td>
+                <td>${event.percentage}</td>
+                <td>${event.act_time}</td>
+                <td>${event.start_time}</td>
+                <td>${event.end_time}</td>
+            </tr>
+            #end
+
+        </table>
+    </div>
+    <div  class="tab-pane" id="allactive" style="padding: 0px 5px">
+        <table class="table table-bordered table-condensed">
+            <tr>
+                <th>任务号</th>
+                <th>组员</th>
+                <th>工作内容</th>
+                <th>遇到的问题</th>
+                <th>开始时间</th>
+                <th>结束时间</th>
+                <th>百分比</th>
+                <th>与计划相比</th>
+                <th>任务时长</th>
+            </tr>
+            #for (event : work)
+            <tr>
+                <td>#${event.event_id}</td>
+                <td>${event.nickname}</td>
+                <td>${event.message}</td>
+                <td>${event.some_thing_wrong}</td>
+                <td>${event.start_time}</td>
+                <td>${event.end_time}</td>
+                <td>${event.percentage}</td>
+                <td>${event.plan}</td>
+                <td>${event.act_time}</td>
+            </tr>
+            #end
+
+        </table>
+    </div>
+    <div  class="tab-pane" id="all" style="padding: 0px 5px">
+        <table class="table table-bordered table-condensed">
+            <tr>
+                <th>任务号</th>
+                <th>组员</th>
+                <th>工作内容</th>
+                <th>遇到的问题</th>
+                <th>开始时间</th>
+                <th>结束时间</th>
+                <th>百分比</th>
+                <th>与计划相比</th>
+                <th>任务时长</th>
+            </tr>
+            #for (event : alllist)
+            <tr>
+                <td>#${event.event_id}</td>
+                <td>${event.nickname}</td>
+                <td>${event.message}</td>
+                <td>${event.some_thing_wrong}</td>
+                <td>${event.start_time}</td>
+                <td>${event.end_time}</td>
+                <td>${event.percentage}</td>
+                <td>${event.plan}</td>
+                <td>${event.act_time}</td>
+            </tr>
+            #end
+
+        </table>
+    </div>
+</div>
+
+<script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.11.1/bootstrap-table.min.js"></script>
+
+<!-- Latest compiled and minified Locales -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.11.1/locale/bootstrap-table-zh-CN.min.js"></script>
+
+<script>
+    $('#myTab a').click(function (e) {
+        e.preventDefault()
+        $(this).tab('show')
+    })
+</script>
+
+</body>
+</html>
