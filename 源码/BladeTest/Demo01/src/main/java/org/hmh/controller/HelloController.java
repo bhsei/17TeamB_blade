@@ -18,9 +18,10 @@ public class HelloController {
         return "index.html";
     }
 
-    public void sayHello() {
+    public String sayHello() {
         System.out.println(" --- Say before in Controller");
         HelloService.sayHello();
         System.out.println(" --- Say after in Controller");
+        return "HelloController";
     }
 }

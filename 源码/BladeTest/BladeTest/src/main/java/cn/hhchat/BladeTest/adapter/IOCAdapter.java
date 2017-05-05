@@ -61,7 +61,6 @@ public class IOCAdapter {
         }
     }
 
-
     public void clear() {
         Blade.$().ioc().clearAll();
     }

@@ -8,6 +8,7 @@ import com.blade.ioc.annotation.Inject;
 import org.hmh.controller.HelloController;
 import org.hmh.controller.UserController;
 import org.hmh.service.HelloService;
+import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
@@ -19,10 +20,10 @@ import org.junit.runner.RunWith;
 @InterceptorClasses({TimeInterceptor.class})
 public class testRunner {
     @Inject
-    HelloService helloService;
+    private HelloService helloService;
 
     @Inject
-    HelloController HelloController;
+    private HelloController HelloController;
     @Test
     public void test1() {
         helloService.sayHello();
@@ -35,7 +36,7 @@ public class testRunner {
     }
 
     @Inject
-    UserController userController;
+    private UserController userController;
 
     @Test
     public void testUser() {

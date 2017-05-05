@@ -11,7 +11,7 @@ import org.hmh.repository.HelloRepository;
 public class HelloService {
 
     @Inject
-    HelloRepository repository;
+    private HelloRepository repository;
 
     public void sayHello() {
         System.out.println(" ----- Hello before in Service");

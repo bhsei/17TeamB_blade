@@ -19,6 +19,9 @@ public class InteceptorAdapter {
         //添加拦截器
         //获取注解中配置的拦截类
         InterceptorClasses annotation = testClassObject.getClass().getAnnotation(InterceptorClasses.class);
+        if (annotation == null) {
+            return ;
+        }
         Class<?>[] interceptorClasses = annotation.value();
         try
         {
