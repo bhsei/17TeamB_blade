@@ -6,6 +6,7 @@ import cn.hhchat.BladeTest.interceptor.TimeInterceptor;
 import cn.hhchat.BladeTest.runner.BladeTest4JUnitRunner;
 import com.blade.ioc.annotation.Inject;
 import org.hmh.controller.HelloController;
+import org.hmh.controller.UserController;
 import org.hmh.service.HelloService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -22,7 +23,6 @@ public class testRunner {
 
     @Inject
     HelloController HelloController;
-
     @Test
     public void test1() {
         helloService.sayHello();
@@ -33,4 +33,15 @@ public class testRunner {
     public void test2() {
         HelloController.sayHello();
     }
+
+    @Inject
+    UserController userController;
+
+    @Test
+    public void testUser() {
+        userController.sayHello();
+    }
+
+
+
 }
