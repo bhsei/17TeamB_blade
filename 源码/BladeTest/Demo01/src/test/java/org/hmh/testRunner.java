@@ -1,8 +1,10 @@
 package org.hmh;
 
+import cn.hhchat.BladeTest.annotation.BladeConfiguration;
+import cn.hhchat.BladeTest.annotation.InterceptorClasses;
+import cn.hhchat.BladeTest.interceptor.TimeInterceptor;
+import cn.hhchat.BladeTest.runner.BladeTest4JUnitRunner;
 import com.blade.ioc.annotation.Inject;
-import org.Junit.Runwith.BladeTest4JUnitRunner;
-import org.Junit.Runwith.annotation.BladeConfiguration;
 import org.hmh.controller.HelloController;
 import org.hmh.service.HelloService;
 import org.junit.Test;
@@ -13,6 +15,7 @@ import org.junit.runner.RunWith;
  */
 @RunWith(BladeTest4JUnitRunner.class)
 @BladeConfiguration("org.hmh")
+@InterceptorClasses({TimeInterceptor.class})
 public class testRunner {
     @Inject
     HelloService helloService;
@@ -21,8 +24,13 @@ public class testRunner {
     HelloController HelloController;
 
     @Test
-    public void test() {
+    public void test1() {
         helloService.sayHello();
+        HelloController.sayHello();
+    }
+
+    @Test
+    public void test2() {
         HelloController.sayHello();
     }
 }

@@ -19,10 +19,8 @@ public class HelloController {
     }
 
     public void sayHello() {
-        System.out.println("Say before Controller");
+        System.out.println(" --- Say before in Controller");
         HelloService.sayHello();
-        System.out.println("Say after Controller");
-
-
+        System.out.println(" --- Say after in Controller");
     }
 }
