@@ -3,6 +3,8 @@ package org.hmh.controller;
 import com.blade.ioc.annotation.Inject;
 import com.blade.mvc.annotation.Controller;
 import com.blade.mvc.annotation.Route;
+import com.blade.mvc.http.Request;
+import com.blade.mvc.http.Response;
 import org.hmh.service.UserService;
 
 import java.io.PrintStream;
@@ -16,10 +18,20 @@ public class UserController {
     private UserService userService;
 
     @Route(values = "/user" )
-    public String index() {
-        return "/user.html";
+    public String getUser(Request request, Response response) {
+        String id = request.query("id");
+        String name = userService.getName(new Integer(id));
+        return name;
     }
-
+    @Route(values = "/addUser" )
+    public boolean setUser(Request request,Response response){
+        String id =  request.query("id");
+        String name = request.query("name");
+       // System.out.println(id+name);
+        userService.setUser(new Integer(id),name);
+        boolean success = userService.storeToDB();
+        return success;
+    }
     public void sayHello(){
         PrintStream out = System.out;
         out.println(" --- before Controller");

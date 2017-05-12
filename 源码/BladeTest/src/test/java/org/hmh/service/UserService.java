@@ -25,7 +25,6 @@ public class UserService {
         name = _name;
     }
     public UserService(){
-        UserRepository.init();
     }
     public boolean storeToDB(){
         return userRepository.addUser(id,name);
@@ -35,5 +34,8 @@ public class UserService {
     }
     public String getName(){
         return userRepository.getUser(id);
+    }
+    public String getName(int id){
+         return userRepository.getUser(id);
     }
 }

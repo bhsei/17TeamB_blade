@@ -11,12 +11,15 @@ import java.util.Map;
 @Component
 public class UserRepository {
     private static  Map<Integer,String> names = new HashMap<Integer,String>();
-    public static  void init(){
+    public  static  void start(){
         if(names.isEmpty()){
             for(int i=0;i<100;i++) {
                 names.put(i, "User#"+i);
             }
         }
+    }
+    public  UserRepository(){
+        start();
     }
     public String getUser(int id){
         return names.get(id);
@@ -24,8 +27,12 @@ public class UserRepository {
     public boolean addUser(int id, String name){
         if( names.get(id)!=null)
             return true;
-        else
-            return names.put(id,name)!=null;
+        else {
+            names.put(id,name);
+            String _name = names.get(id);
+          //  System.out.println(_name);
+            return _name!= null;
+        }
     }
     public boolean removeUser(int id){
         return names.remove(id)!=null;
