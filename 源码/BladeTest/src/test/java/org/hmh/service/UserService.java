@@ -2,6 +2,7 @@ package org.hmh.service;
 
 import com.blade.ioc.annotation.Inject;
 import com.blade.ioc.annotation.Service;
+import org.hmh.model.User;
 import org.hmh.repository.UserRepository;
 
 /**
@@ -20,22 +21,16 @@ public class UserService {
     public void setName(String _name){
         name = _name;
     }
-    public void setUser(int _id,String _name){
-        id = _id;
-        name = _name;
-    }
+
     public UserService(){
     }
-    public boolean storeToDB(){
-        return userRepository.addUser(id,name);
+    public boolean storeToDB(String username,String password) throws Exception {
+        return userRepository.addUser(username,password);
     }
-    public boolean removeFromDB(){
-        return userRepository.removeUser(id);
+    public boolean removeFromDB(String username){
+        return userRepository.removeUser(username);
     }
-    public String getName(){
-        return userRepository.getUser(id);
-    }
-    public String getName(int id){
-         return userRepository.getUser(id);
+    public User getUser(String username){
+        return userRepository.getUser(username);
     }
 }

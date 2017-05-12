@@ -1,6 +1,7 @@
 package org.hmh.repository;
 
 import com.blade.ioc.annotation.Component;
+import org.hmh.model.User;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -10,31 +11,34 @@ import java.util.Map;
  */
 @Component
 public class UserRepository {
-    private static  Map<Integer,String> names = new HashMap<Integer,String>();
+    private static Map<String, User> userMap=new HashMap<>();
+
     public  static  void start(){
-        if(names.isEmpty()){
-            for(int i=0;i<100;i++) {
-                names.put(i, "User#"+i);
-            }
-        }
+        userMap.clear();
+        userMap.put("hello", new User("hello", "hello"));
     }
     public  UserRepository(){
         start();
     }
-    public String getUser(int id){
-        return names.get(id);
+    public User getUser(String username){
+        return userMap.get(username);
     }
-    public boolean addUser(int id, String name){
-        if( names.get(id)!=null)
+    public boolean addUser(String name,String password) throws Exception {
+        if (userMap.get(name) != null) {
+            throw new Exception("重复注册");
+        } else {
+            User user = new User();
+            user.setUsername(name);
+            user.setPassword(password);
+            userMap.put(name, user);
             return true;
-        else {
-            names.put(id,name);
-            String _name = names.get(id);
-          //  System.out.println(_name);
-            return _name!= null;
         }
     }
-    public boolean removeUser(int id){
-        return names.remove(id)!=null;
+    public boolean removeUser(String name){
+        User user = userMap.get(name);
+        if (user != null) {
+            userMap.remove(user);
+        }
+        return true;
     }
 }
