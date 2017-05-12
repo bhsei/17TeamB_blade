@@ -36,12 +36,13 @@ public class TestMain {
     @Inject
     private org.hmh.controller.HelloController HelloController;
 
+    //test controller flow
     @Test
     public void test1() {
         helloService.sayHello();
         HelloController.sayHello();
     }
-
+    //test page get
     @Test
     public void Test2() throws InvocationTargetException, IllegalAccessException, MultipartException, IOException {
 
@@ -51,5 +52,31 @@ public class TestMain {
         Assert.assertEquals(routeMock.Request("/hello", HttpMethod.GET,request,new MockResponse()),"hello.html");
 
     }
+    //test value get Only
+    @Test
+    public void Test3() throws InvocationTargetException, IllegalAccessException, MultipartException, IOException {
+
+        MockRequest request = new MockRequest();
+        request.parameter("id", "1");
+        Assert.assertEquals(routeMock.Request("/user", HttpMethod.GET,request,new MockResponse()),"User#1");
+        Assert.assertEquals(routeMock.Request("/user", HttpMethod.GET,request,new MockResponse()),"user#1");
+    }
+    //test value set and get
+    @Test
+    public void Test4() throws InvocationTargetException, IllegalAccessException, MultipartException, IOException {
+
+        MockRequest request = new MockRequest();
+        request.parameter("id", "100");
+        request.parameter("name","xxx100");
+        Assert.assertEquals(routeMock.Request("/addUser", HttpMethod.GET,request,new MockResponse()),true);
+        MockRequest request2 = new MockRequest();
+        //error test
+        // request.parameter("id", "10");
+       // Assert.assertEquals(routeMock.Request("/user", HttpMethod.GET,request,new MockResponse()),"xxx100");
+        request.parameter("id", "100");
+        Assert.assertEquals(routeMock.Request("/user", HttpMethod.GET,request,new MockResponse()),"xxx100");
+
+    }
+
 
 }
