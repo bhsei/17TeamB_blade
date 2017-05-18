@@ -20,7 +20,7 @@ public class Main {
         rootPath = FileUtil.dealPath(rootPath);
         File rootDic = new File(rootPath);
 
-        WeekScanner scanner = new WeekScanner(lists,"thisWeek","源码","更新日志");
+        WeekScanner scanner = new WeekScanner(lists,"thisWeek","target","更新日志");
         scanner.scan(rootDic);
 
         String thisWeek = rootPath + "/thisWeek";
