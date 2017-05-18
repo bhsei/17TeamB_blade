@@ -1,0 +1,31 @@
+记录更新日期:  2017-05-18 16:12:35
+更新文件数量：  27
+文件 1 最后更新日期： 2017-05-12  文件相对路径:  \过程管理\20170512上课问题整理.txt
+文件 2 最后更新日期： 2017-05-12  文件相对路径:  \过程管理\20170505上课问题整理.txt
+文件 3 最后更新日期： 2017-05-18  文件相对路径:  \源码\weekScanner\weekScanner.iml
+文件 4 最后更新日期： 2017-05-18  文件相对路径:  \源码\weekScanner\src\main\java\org\hmh\WeekScanner.java
+文件 5 最后更新日期： 2017-05-18  文件相对路径:  \源码\weekScanner\src\main\java\org\hmh\Main.java
+文件 6 最后更新日期： 2017-05-18  文件相对路径:  \源码\weekScanner\src\main\java\org\hmh\LogUtil.java
+文件 7 最后更新日期： 2017-05-18  文件相对路径:  \源码\weekScanner\src\main\java\org\hmh\FileUtil.java
+文件 8 最后更新日期： 2017-05-18  文件相对路径:  \源码\weekScanner\src\main\java\org\hmh\DateUtil.java
+文件 9 最后更新日期： 2017-05-18  文件相对路径:  \源码\weekScanner\pom.xml
+文件 10 最后更新日期： 2017-05-12  文件相对路径:  \源码\softTime\softTime.iml
+文件 11 最后更新日期： 2017-05-12  文件相对路径:  \源码\initDemo\sample.iml
+文件 12 最后更新日期： 2017-05-18  文件相对路径:  \源码\BladeTest\src\test\java\org\hmh\service\UserService.java
+文件 13 最后更新日期： 2017-05-18  文件相对路径:  \源码\BladeTest\src\test\java\org\hmh\repository\UserRepository.java
+文件 14 最后更新日期： 2017-05-18  文件相对路径:  \源码\BladeTest\src\test\java\org\hmh\model\User.java
+文件 15 最后更新日期： 2017-05-18  文件相对路径:  \源码\BladeTest\src\test\java\org\hmh\controller\UserController.java
+文件 16 最后更新日期： 2017-05-18  文件相对路径:  \源码\BladeTest\src\test\java\org\hmh\MainTest\TestMain.java
+文件 17 最后更新日期： 2017-05-18  文件相对路径:  \源码\BladeTest\cloc.pl
+文件 18 最后更新日期： 2017-05-12  文件相对路径:  \幻灯片\第十次-改进2.key
+文件 19 最后更新日期： 2017-05-18  文件相对路径:  \实验内容\实验四\软件测试需求说明书.docx
+文件 20 最后更新日期： 2017-05-12  文件相对路径:  \实验内容\实验八\工作量统计分析0417.docx
+文件 21 最后更新日期： 2017-05-12  文件相对路径:  \实验内容\实验三\模型\需求分析.mdj
+文件 22 最后更新日期： 2017-05-12  文件相对路径:  \实验内容\实验三\模型\设计类图.mdj
+文件 23 最后更新日期： 2017-05-12  文件相对路径:  \实验内容\实验三\模型\PNG\需求分析.png
+文件 24 最后更新日期： 2017-05-12  文件相对路径:  \实验内容\实验三\模型\PNG\类图.png
+文件 25 最后更新日期： 2017-05-12  文件相对路径:  \实验内容\实验三\模型\PNG\构件图.png
+文件 26 最后更新日期： 2017-05-18  文件相对路径:  \实验内容\实验七\weekScanner-v1.0-release.jar
+文件 27 最后更新日期： 2017-05-12  文件相对路径:  \project管理\B组最新.mpp
+
+
