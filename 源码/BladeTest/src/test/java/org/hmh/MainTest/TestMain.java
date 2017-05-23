@@ -24,7 +24,7 @@ import java.lang.reflect.InvocationTargetException;
  * Created this one by HMH on 2017/5/10.
  */
 @RunWith(BladeTest4JUnitRunner.class)
-@BladeConfiguration("org.hmh")
+@BladeConfiguration("org.hmh.model")
 @InterceptorClasses({TimeInterceptor.class})
 public class TestMain {
 
