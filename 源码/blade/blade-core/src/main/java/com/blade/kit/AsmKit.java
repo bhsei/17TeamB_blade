@@ -15,7 +15,7 @@
  */
 package com.blade.kit;
 
-import org.objectweb.asm.*;
+import jdk.internal.org.objectweb.asm.*;
 
 import java.io.IOException;
 import java.lang.reflect.Method;
