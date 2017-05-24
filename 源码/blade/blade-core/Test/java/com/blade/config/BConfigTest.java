@@ -60,7 +60,7 @@ public class BConfigTest {
 
     @Test
     public void getBasePackage() throws Exception {
-
+        System.out.println(b.getPackages());
     }
 
     @Test
