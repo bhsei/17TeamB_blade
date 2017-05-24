@@ -32,7 +32,7 @@ public class FieldInjectorTest {
         HelloController controller = new HelloController();
         //获取字段
         HelloService helloService = new HelloService();
-        ioc.addBean(helloService);
+//        ioc.addBean(helloService);
         assert controller.helloService == null;
         //填充Bean
         List<Field> fields = Arrays.stream(HelloController.class.getFields()).filter(f -> !f.isAnnotationPresent(Service.class)).collect(Collectors.toList());
