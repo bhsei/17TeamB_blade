@@ -38,6 +38,7 @@ import static com.blade.Blade.$;
  */
 public class BConfig {
 
+
     private static final Logger LOGGER = LoggerFactory.getLogger(BConfig.class);
 
     private Set<String> packages;
