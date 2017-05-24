@@ -105,7 +105,7 @@ public class BConfigTest {
         System.out.println(b.getPackages());
 
     }
-    
+
 
     @Test
     public void getPackages() throws Exception {
