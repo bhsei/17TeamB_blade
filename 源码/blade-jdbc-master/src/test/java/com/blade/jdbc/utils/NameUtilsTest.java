@@ -72,16 +72,16 @@ public class NameUtilsTest {
         String test2 = "aBC";//文件名无后缀异常
         String test3 = "132132132.png";
         String test4 = "ddDd.txt";
-        String test5 = "ddDD";//文件名无后缀异常
+        String test5 = "ddDd.txt";//文件名无后缀异常
         String test6 = "aBC.txt";
         String test7 = "aBC.jpg";
 //        System.out.println(n.createUniqueFileName(test1));
 //        System.out.println(n.createUniqueFileName(test2));
-        System.out.println(n.createUniqueFileName(test3));
+//        System.out.println(n.createUniqueFileName(test3));
         System.out.println(n.createUniqueFileName(test4));
-//        System.out.println(n.createUniqueFileName(test5));
-        System.out.println(n.createUniqueFileName(test6));
-        System.out.println(n.createUniqueFileName(test7));
+        System.out.println(n.createUniqueFileName(test5));
+//        System.out.println(n.createUniqueFileName(test6));
+//        System.out.println(n.createUniqueFileName(test7));
 
 
     }
@@ -89,16 +89,17 @@ public class NameUtilsTest {
     @Test
     public void createEndSuffixFileName() throws Exception {
         String test1=null;//文件为空异常
-        String test2 = "aBC";//文件名无后缀异常
+        String test2 = "aBC.";//文件名无后缀异常
         String test3 = "132132132.png";
         String test4 = "ddDd.txt";
         String test5 = "ddDD";//文件名无后缀异常
         String test6 = "aBC.txt";
         String test7 = "aBC.jpg";
-        System.out.println(n.createEndSuffixFileName(test3,".txt"));
-        System.out.println(n.createEndSuffixFileName(test4,".png"));
-        System.out.println(n.createEndSuffixFileName(test6,".txt"));
-        System.out.println(n.createEndSuffixFileName(test7,".txt"));
+        System.out.println(n.createEndSuffixFileName(test2,".txt"));
+//        System.out.println(n.createEndSuffixFileName(test3,".txt"));
+//        System.out.println(n.createEndSuffixFileName(test4,"png"));
+//        System.out.println(n.createEndSuffixFileName(test6,".txt"));
+//        System.out.println(n.createEndSuffixFileName(test7,".txt"));
     }
 
 }
