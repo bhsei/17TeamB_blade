@@ -6,7 +6,10 @@ import meta.model.CommitObject;
 import model.RepoEntity;
 import okhttp3.Request;
 import okhttp3.Response;
+import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import repository.ClassificationRepository;
+import utils.ExcelUtil;
+import utils.PathUtil;
 import utils.PropsUtil;
 import utils.httpUtils;
 
@@ -75,7 +78,6 @@ public class Main {
             returnJson.add(response2.body().string());
             System.out.println(" ===> 获取第"+(next)+"页");
 
-
             for (int i = 0; i < returnJson.size(); i++) {
                 String string = returnJson.get(i);
                 List<CommitObject> tempObject = JSON.parseArray(string, CommitObject.class);
@@ -86,10 +88,17 @@ public class Main {
             System.out.println(" ===> 获得总提交数"+commitObjectList.size());
 
             System.out.println();
+
+
+
             AnalizyTools analizyTools = new AnalizyTools();
             RepoEntity repoEntity = new RepoEntity();
             analizyTools.analizyClass(commitObjectList, repoEntity);
+
+
+
         } catch (Exception e) {
+            e.printStackTrace();
             System.err.println(" ===> 参数或网络错误，如果参数错误，请注意参数格式：java -jar **.jar 仓库标题 [关键词] [关键词]，仓库标题格式如：bhsei/17TeamB_blade，关键词为可选参数，使用空格间隔");
         }
 
