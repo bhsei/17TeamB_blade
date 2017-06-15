@@ -32,6 +32,9 @@ public class staticticController {
     @Inject
     private repoService repoService;
 
+    /**
+     * 统计
+     */
     @Route(value = "/statistic")
     public String getWorking(Session session, Request request, Response response) throws Exception, IOException {
         //获取表单信息
@@ -53,5 +56,5 @@ public class staticticController {
     }
 
     @Inject
-    EventService eventService;
+    private EventService eventService;
 }

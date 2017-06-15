@@ -14,22 +14,28 @@ import java.io.IOException;
 import java.util.Date;
 
 /**
- * Created by HMH on 2017/4/18.
+ * Created this one by HMH on 2017/4/18.
  */
 @Controller
 public class loginController {
 
     @Inject
-    userService userService;
-    @Inject
-    EventService eventService;
+    private userService userService;
 
+    @Inject
+    private EventService eventService;
+
+    /**
+     * 登陆页面
+     */
     @Route("/login")
     public String getLogin(Session session, Request request) {
         return "login.html";
     }
 
-
+    /**
+     * 工作页面
+     */
     @Route(value = "/working")
     public String getWorking(Session session, Request request,Response response) throws Exception, IOException {
         //获取表单信息
@@ -49,6 +55,9 @@ public class loginController {
         return "working";
     }
 
+    /**
+     * 提交
+     */
     @Route("/count")
     public void Count(Session session, Request request, Response response) throws Exception{
         String username = request.query("username");
@@ -92,6 +101,9 @@ public class loginController {
         }
     }
 
+    /**
+     * 取消
+     */
     @Route("/cancel")
     public void cancel(Session session, Request request, Response response) throws Exception {
         String username = request.query("username");

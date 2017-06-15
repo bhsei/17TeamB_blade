@@ -1,14 +1,19 @@
 package model;
 
+import utils.DateUtil;
+
+import java.text.ParseException;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
+import java.util.TimeZone;
 
 /**
  * Created by HMH on 2017/4/18.
  */
 public class CommitEntity {
     String message;
-    String date;
+    Date date;
     UserEntity user;
     List<ClassificationEntity> classificationEntityList = new ArrayList<>();
 
@@ -20,12 +25,16 @@ public class CommitEntity {
         this.message = message;
     }
 
-    public String getDate() {
-        return date;
+    public String getDateStr() {
+        return DateUtil.convert2Str(date,"yyyy年MM月dd日 HH:mm");
     }
 
-    public void setDate(String date) {
-        this.date = date;
+    public void setDate(String date) throws ParseException {
+        this.date = DateUtil.convert2Date(date, "yyyy-MM-dd'T'HH:mm:ss'Z'", TimeZone.getTimeZone("England/London"));
+    }
+
+    public Date getDate() {
+        return this.date;
     }
 
     public UserEntity getUser() {
@@ -42,6 +51,6 @@ public class CommitEntity {
 
     @Override
     public String toString() {
-        return date + " --- " + user.getName() + " : " + message  +  "  --- "+ classificationEntityList;
+        return getDateStr() + " --- " + user.getName() + " : " + message  +  "  --- "+ classificationEntityList;
     }
 }

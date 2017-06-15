@@ -36,7 +36,6 @@ public class ClassificationRepository {
         classificationEntities.add(new ClassificationEntity("幻灯片"));
         classificationEntities.add(new ClassificationEntity("keynote"));
         classificationEntities.add(new ClassificationEntity("project"));
-        classificationEntities.add(new ClassificationEntity("conflict"));
         classificationEntities.add(new ClassificationEntity("需求"));
         classificationEntities.add(new ClassificationEntity("错误"));
         classificationEntities.add(new ClassificationEntity("有效"));
