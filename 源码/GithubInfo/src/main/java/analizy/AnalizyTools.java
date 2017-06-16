@@ -190,8 +190,10 @@ public class AnalizyTools {
     public void addTimeSplitSheet(HSSFWorkbook excel,String sheetName, List<CommitEntity> commitEntityList) {
         HSSFSheet weekSheet = ExcelUtil.createSheet(excel, sheetName+"周报", "周数", "次数");
         HSSFSheet daySheet = ExcelUtil.createSheet(excel, sheetName + "日报", "天", "次数");
+        HSSFSheet dddSheet = ExcelUtil.createSheet(excel, sheetName + "星期分布", "周几", "次数");
         HashMap<Integer, Integer> weekFilter = new HashMap<>();
         HashMap<Integer, Integer> dayFilter = new HashMap<>();
+        HashMap<Integer, Integer> dddFilter = new HashMap<>();
         for(int i=0;i<commitEntityList.size();i++) {
             int weekNums= DateUtil.getWeekOfYear(commitEntityList.get(i).getDate());
             weekFilter.put(weekNums,weekFilter.getOrDefault(weekNums,0)+1);
@@ -200,6 +202,11 @@ public class AnalizyTools {
             int weekNums= DateUtil.getDayOfYear(commitEntityList.get(i).getDate());
             dayFilter.put(weekNums,dayFilter.getOrDefault(weekNums,0)+1);
         }
+        for(int i=0;i<commitEntityList.size();i++) {
+            int dddNums= DateUtil.getDayOfWeek(commitEntityList.get(i).getDate());
+            dddNums=(dddNums-1)==0?7:(dddNums-1);
+            dddFilter.put(dddNums,dddFilter.getOrDefault(dddNums,0)+1);
+        }
         int i=1;
         for (Map.Entry<Integer, Integer> entity : weekFilter.entrySet()) {
             ExcelUtil.addRow(weekSheet,i++,false,entity.getKey(),entity.getValue());
@@ -207,6 +214,10 @@ public class AnalizyTools {
         i = 1;
         for (Map.Entry<Integer, Integer> entity : dayFilter.entrySet()) {
             ExcelUtil.addRow(daySheet,i++,false,entity.getKey(),entity.getValue());
+        }
+        i = 1;
+        for (Map.Entry<Integer, Integer> entity : dddFilter.entrySet()) {
+            ExcelUtil.addRow(dddSheet,i++,false,entity.getKey(),entity.getValue());
         }
     }
 }
