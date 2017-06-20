@@ -37,4 +37,10 @@ public class DateUtil {
         return calendar.get(Calendar.DAY_OF_YEAR);
     }
 
+    public static int getDayOfWeek(Date date) {
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTime(date);
+        return calendar.get(Calendar.DAY_OF_WEEK);
+    }
+
 }
